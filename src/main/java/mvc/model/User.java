@@ -2,37 +2,34 @@ package mvc.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date;
+
 
 public class User {
     private String name;
-    private String lastName;
+    private String lastname;
+    private String pass;
     private String detail;
-    private String password;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate birthDate;
+    private Date birthDate;
     private Gender gender = Gender.Male;
     private String country;
-    private boolean noSmoking;
+    private  boolean nonSmoking;
 
-    public User() {
+    public String getName() {
+        return name;
     }
 
-    public String getDetail() {
-        return detail;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public boolean isNonSmoking() {
+        return nonSmoking;
     }
 
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
+    public void setNonSmoking(boolean nonSmoking) {
+        this.nonSmoking = nonSmoking;
     }
 
     public String getCountry() {
@@ -43,43 +40,43 @@ public class User {
         this.country = country;
     }
 
-    public boolean isNoSmoking() {
-        return noSmoking;
+    public String getPass() {
+        return pass;
     }
 
-    public void setNoSmoking(boolean noSmoking) {
-        this.noSmoking = noSmoking;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
-    public String getName() {
-        return name;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Gender getGender() {
+        return gender;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
-    public String getPassword() {
-        return password;
+    public String getDetail() {
+        return detail;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
-    public LocalDate getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 }
